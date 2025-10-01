@@ -6,4 +6,4 @@ cada nivel tendra dentro otras carpetas, estas tendran el nombre del algoritmo y
 
 # Nivel 1: Fundamentos basicos de c++ (400 codigos)
 # Nivel 2: Estructuras de datos y algoritmos intermedios (400 codigos)
-# Nivel 3: Algoritmos avanzados y c++ STl (200 codigos);
+# Nivel 3: Algoritmos avanzados y c++ STl (200 codigos)
