@@ -2,6 +2,7 @@
 Repositorio de 800 códigos de c++ hecho por nuestro grupo: George Peláez, Carlos Oseguera y Erick Macias
 
 dentro de este repositorio se encuentra 3 carpetas, cada una con una dificultad en especifica
+cada nivel tendra dentro otras carpetas, estas tendran el nombre del algoritmo y dentro de ellas estara el codigo y documentacion del algoritmo
 
 # Nivel 1: Fundamentos basicos de c++ (400 codigos)
 # Nivel 2: Estructuras de datos y algoritmos intermedios (400 codigos)
