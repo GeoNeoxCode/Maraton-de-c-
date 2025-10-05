@@ -1,4 +1,4 @@
 # Contribucion 
 ## Erick Macias:
 ## Carlos Oseguera:
-## George Pelaez:
+## George Pelaez: 20
