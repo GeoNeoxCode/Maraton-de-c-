@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std; 
+int main (){
+    int saldo_inicial = 1000;
+    int saldo, reintegro, opcion,agregar;
+    cout<<"\tBienvenido a su cajero Virtual";
+    cout<<"\nEscoja una opcion: ";
+    cout<<"\n1. ingreso en cuenta";
+    cout<<"\n2. reintegro";
+    cout<<"\n3. Ver saldo de cuenta";
+    cout<<"\n4. Salir" << endl;
+    cin >> opcion;
+    switch (opcion)
+    {
+    case 1:
+        cout<<"\nIngrese la cantidad a depositar: ";
+        cin>>agregar;
+        saldo = saldo_inicial + agregar;
+        cout<<"\nCantidad disponible en cuenta: "<<saldo;
+        break;
+    case 2:
+        cout<<"\nCuenta cantidad desea retirar: ";
+        cin>>reintegro;
+
+        while(reintegro>1000) {
+            cout<<"\nLa cantidad digitada es mayor a 1000, digite de nuevo la cantiadad a retirar: ";
+            cin>>reintegro;
+        }
+        break;
+    case 3:
+  cout<<"\nLa cantidad disponible en cuenta es de: "<<saldo_inicial;
+      break;
+    case 4:
+        cout<<"Gracias por utilizar nuestro cajero automatico"; 
+        break;
+    default:
+        cout<<"Se equivoco de opcion de menu";
+        break;
+    }
+    return 0;
+}
