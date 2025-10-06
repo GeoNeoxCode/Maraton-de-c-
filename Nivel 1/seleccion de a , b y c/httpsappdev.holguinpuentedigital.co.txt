@@ -1,0 +1,24 @@
+#include <iostream>
+
+int main() {
+    char opcion;
+
+    std::cout << "Selecciona una opcion (a, b, c): ";
+    std::cin >> opcion;
+
+    switch (opcion) {
+        case 'a':
+            std::cout << "Seleccionaste la opcion A." << std::endl;
+            break;
+        case 'b':
+            std::cout << "Seleccionaste la opcion B." << std::endl;
+            break;
+        case 'c':
+            std::cout << "Seleccionaste la opcion C." << std::endl;
+            break;
+        default:
+            std::cout << "Opcion no valida." << std::endl;
+            break;
+    }
+    return 0;
+}
