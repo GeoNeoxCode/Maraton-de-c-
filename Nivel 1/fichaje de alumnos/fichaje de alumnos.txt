@@ -1,0 +1,40 @@
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+
+int main()
+{
+  
+ char opcion;
+ do 
+ {
+  printf("\n\n\t 1.Crear fichero de alumnos\n");
+  printf("\n\n\t 2.Alta de alumnos \n");
+  printf("\n\n\t 3.Baja de alumnos\n");
+  printf("\n\n\t 4.Modificaci n de datos de empleados\n");
+  printf("\n\n\t 5.Salir\n");
+  printf("Introduzca el n mero de la opci n");
+  opcion = getchar();
+  switch(opcion)
+  {
+    case '1':
+        printf("Has entrado en Crear fichero de alumnos"); 
+        break;
+    case '2':
+         printf("Has entrado en Alta de alumnos");
+        break;
+    case '3':
+         printf("Has entrado en Baja de alumnos");
+        break;
+    case '4':
+         printf("Has entrado en Modificaci n del alumnos");
+        break;
+    case '5':
+       break;
+  default:
+  printf("Debe elegir una opci n entre 1 y 5");
+  system("cls");
+  }
+ }while (opcion != '5');
+return 0;
+}
