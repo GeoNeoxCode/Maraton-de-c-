@@ -1,0 +1,44 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+
+long long i, j, contador; //estas variables van a manejar grandes numeros.
+
+int n=0;
+long perfecto[4];
+i=1;
+int maximos=0;
+
+while(true)     //se inicia un bucle infinito
+  {
+  
+   contador=0;
+   i++;
+   for(j=1; j<i-1; j++)         //con este bucle analizamos sus divisores
+    {
+     if(i%j==0)contador=contador+j;
+    }
+   if(contador==i)  //si la suma de sus divisores es igual al numero
+     {
+      perfecto[n]=i;  //lo añadimos a la lista de perfectos
+      n++;
+      maximos++;
+     }
+   if(maximos==4) break; //de no ser por esta sentencia no terminaria nunca
+  }
+
+cout << "  Calcula los cuatro primeros numero perfectos" << endl;
+
+
+//mostramos los resultados en pantalla.
+for(n=0; n<4; n++) cout << n+1<< ")   " << perfecto[n] << endl;
+
+cout << endl; 
+
+system("PAUSE");
+
+return 0;
+}
