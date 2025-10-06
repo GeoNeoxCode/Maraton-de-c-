@@ -1,0 +1,17 @@
+#include <iostream>
+
+void verificarParImpar(int numero) {
+    if (numero % 2 == 0) {
+        std::cout << "El numero es par.";
+    } else {
+        std::cout << "El numero es impar.";
+    }
+}
+
+int main() {
+    int num;
+    std::cout << "Ingresa un numero: ";
+    std::cin >> num;
+    verificarParImpar(num);
+    return 0;
+}
