@@ -1,0 +1,35 @@
+
+#include <stdio.h>
+void main(void)
+{
+   /* Declaramos las variables */
+    int num_1, num_2, num_3;
+    int num_menor;
+   /* Inicializamos las variables num_... */
+    num_1 = 2;
+    num_2 = 134;
+    num_3 = 5;
+   /* Determinamos el menor de los números */
+    if (num_1 < num_2 && num_1 < num_3)
+      {
+       num_menor = num_1;
+       printf("\n De los valores %d, %d, %d el menor     es:\n\n", num_1,num_2,num_3);
+       printf("\t El valor: %d\n\n",num_menor);
+       printf("Presione ENTER para finalizar...");
+      }
+    else if (num_2 < num_1 && num_2 < num_3)
+      {
+       num_menor = num_2;
+       printf("\n De los valores %d, %d, %d el menor es:\n\n",num_1,num_2,num_3);
+       printf("\t El valor: %d\n\n",num_menor);
+       printf("Presione ENTER para finalizar...");
+      }
+    else if (num_3 < num_1 && num_3 < num_2)
+      {
+       num_menor = num_3;
+       printf("De los valores %d, %d, %d el menor es:\n\n",num_menor);
+       printf("\t El valor: %d\n\n",num_menor);
+       printf("Presiones ENTER para finalizar...");
+      }
+    getchar();
+  }
