@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main()
+{
+  int cantidad;
+  cout << "Introduzca una cantidad: ";
+  cin >> cantidad;
+  
+  if(cantidad < 500 )
+  {
+    cantidad = cantidad + (cantidad * 5/100);
+  }
+  else 
+  {
+     if (cantidad >= 500 && cantidad < 1000)
+     {
+       cantidad = cantidad + (cantidad * 7/100);
+     }
+     else 
+     {
+       if (cantidad >= 1000 && cantidad < 5000)
+       {
+        cantidad = cantidad + (cantidad * 15/100);
+       }
+       else 
+       {
+         if(cantidad >= 5000)
+          {
+           cantidad = cantidad + (cantidad * 5/100);
+          }
+        }  
+     }
+  }
+  
+  cout << "\n La nueva cantidad es: " << cantidad << endl;
+  system("PAUSE");    
+  return 0;
+}
