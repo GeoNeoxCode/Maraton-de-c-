@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+    int suma = 0;
+    int numero = 1;
+
+    while (suma < 10) {
+        suma += numero;
+        numero++;
+    }
+    
+    std::cout << "La suma total es: " << suma << std::endl;
+
+    return 0;
+}
