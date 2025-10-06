@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+
+int main()
+{
+   int n1,n2;
+   
+   printf("INGRESE UN NUMERO ENTERO: ");
+   scanf("%d",&n1);
+
+   printf("INGRESE OTRO NUMERO ENTERO: ");
+   scanf("%d",&n2);
+
+   if (n1>n2);
+   {
+      printf("El número mayor es %d",n1);
+   }
+   else if (n1==n2)
+   {
+      printf(\"Los números son iguales\");
+   }
+   else
+   {
+      printf("El número mayor es %d",n2);
+   }
+   return 0;
+}

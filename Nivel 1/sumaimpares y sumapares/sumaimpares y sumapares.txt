@@ -1,0 +1,38 @@
+
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main()
+{
+ bool bandera;
+ int impares,sumaimpares,pares,sumapares,contador;
+ impares=sumaimpares=pares=sumapares=0;
+ bandera = true;
+ for(contador=1; contador<=100; contador++)
+ {
+  
+  if(bandera == true)
+  {
+   impares+=1;
+   sumaimpares = sumaimpares + contador;
+   bandera = false;
+  }
+  else 
+  {
+   pares+=1;
+   sumapares = sumapares + contador;
+   bandera = true;
+  }
+ 
+ }
+ 
+ cout << "La suma de los impares es: " << sumaimpares << endl;
+ cout << "El número de impares es: " << impares << endl;
+ cout << "La suma de pares es: " << sumapares << endl;
+ cout << "El número de pares es: " << pares << endl;
+  
+ system("PAUSE");     
+ return 0;
+}

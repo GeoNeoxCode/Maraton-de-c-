@@ -1,0 +1,21 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int suma, pares, cuadrados;
+  cuadrados=suma=0;
+  for(pares=2;pares<=100;pares+=2)
+  {
+     cuadrados = pares * pares;
+     suma = suma + cuadrados;
+  }
+  
+  cout << "\nLa suma de los cuadrados del 0 al cien es: " << suma << endl;
+  cout << "Pulse una tecla para acabar...\n";
+  cin.get();
+    
+  return 0;
+}
