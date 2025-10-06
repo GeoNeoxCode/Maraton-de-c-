@@ -1,0 +1,9 @@
+#include <iostream>
+
+int main() {
+    int numero;
+    std::cout << "Ingresa un numero: ";
+    std::cin >> numero;
+    std::cout << "El numero que ingresaste es: " << numero;
+    return 0;
+}
