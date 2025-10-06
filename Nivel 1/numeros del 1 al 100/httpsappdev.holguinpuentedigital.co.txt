@@ -1,0 +1,23 @@
+#include <stdio.h>      /*Para utilizar la función printf()*/
+ 
+void main(void)
+{
+   /*Declaramos una variable entera para el ciclo for que usaremos*/
+   int i;
+
+   /*Mostramos en pantalla el siguiente encabezado*/
+
+   printf("Listado de los numeros pares en el econjunto de numeros del 1 al 100.\n\n");
+   /*Buscamos los pares con ayuda del ciclo For*/
+   for ( i = 0 ; i <= 100 ; i += 2 )
+   {
+       /*Los mostramos en pantalla*/
+       printf("\t %d",i);
+   }
+
+   /*Solicitamos se presione una tecla para finalizar*/
+   printf("Presione una tecla para finalizar...");
+
+   /*Esperamos a que se preione cualquier tecla*/
+   getchar();       /*Función que recibe una tecla */
+}
