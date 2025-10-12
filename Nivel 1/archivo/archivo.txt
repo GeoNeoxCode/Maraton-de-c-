@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+ 
+int main() {
+    std::ifstream archivo("entrada.txt"); // Abre el archivo en modo lectura
+ 
+    if (!archivo) {
+        std::cerr << "No se pudo abrir el archivo." << std::endl;
+        return 1;
+    }
+ 
+    std::string linea;
+    while (std::getline(archivo, linea)) {
+        std::cout << linea << std::endl;
+    }
+ 
+    archivo.close(); // Cierra el archivo
+ 
+    return 0;
+}

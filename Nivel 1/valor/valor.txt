@@ -1,0 +1,24 @@
+#include <iostream>
+ 
+template <typename T>
+class MiContenedor {
+public:
+    MiContenedor(T valor) : valor_(valor) {}
+ 
+    T obtenerValor() const {
+        return valor_;
+    }
+ 
+private:
+    T valor_;
+};
+ 
+int main() {
+    MiContenedor<int> intContainer(42);
+    MiContenedor<double> doubleContainer(3.14);
+ 
+    std::cout << "Valor int: " << intContainer.obtenerValor() << std::endl;
+    std::cout << "Valor double: " << doubleContainer.obtenerValor() << std::endl;
+ 
+    return 0;
+}

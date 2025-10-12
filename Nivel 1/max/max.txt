@@ -1,0 +1,16 @@
+#include <iostream>
+ 
+template <typename T>
+T maximo(T a, T b) {
+    return a > b ? a : b;
+}
+ 
+int main() {
+    int intMax = maximo(5, 10);
+    double doubleMax = maximo(3.5, 2.5);
+ 
+    std::cout << "Max int: " << intMax << std::endl;
+    std::cout << "Max double: " << doubleMax << std::endl;
+ 
+    return 0;
+}
