@@ -1,0 +1,46 @@
+//Código: Beastieux
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+ 
+int main() {
+    srand(static_cast<unsigned int>(time(nullptr))); // Inicializar la semilla aleatoria
+     
+    cout << "Juego de Piedra, Papel o Tijeras" << endl;
+     
+    string opciones[] = {"Piedra", "Papel", "Tijeras"};
+     
+    while (true) {
+        cout << "\nElige tu jugada (0 - Piedra, 1 - Papel, 2 - Tijeras, 3 - Salir): ";
+        int eleccion;
+        cin >> eleccion;
+         
+        if (eleccion < 0 || eleccion > 3) {
+            cout << "Selección inválida. Elige nuevamente." << endl;
+            continue;
+        }
+         
+        if (eleccion == 3) {
+            cout << "Gracias por jugar. ¡Hasta luego!" << endl;
+            break;
+        }
+         
+        int computadora = rand() % 3;
+         
+        cout << "Tu elección: " << opciones[eleccion] << endl;
+        cout << "Computadora: " << opciones[computadora] << endl;
+         
+        if (eleccion == computadora) {
+            cout << "¡Empate!" << endl;
+        } else if ((eleccion == 0 && computadora == 2) || 
+                   (eleccion == 1 && computadora == 0) || 
+                   (eleccion == 2 && computadora == 1)) {
+            cout << "¡Ganaste!" << endl;
+        } else {
+            cout << "¡Computadora ganó!" << endl;
+        }
+    }
+ 
+    return 0;
+}
