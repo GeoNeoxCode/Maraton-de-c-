@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cctype> // Para usar las funciones de verificación de caracteres
+ 
+int main() {
+    std::string texto;
+    int contadorVocales = 0;
+    int contadorConsonantes = 0;
+ 
+    std::cout << "Ingrese una cadena de texto: ";
+    std::getline(std::cin, texto);
+ 
+    for (char c : texto) {
+        c = std::tolower(c); // Convertir el carácter a minúscula para comparación
+ 
+        if (std::isalpha(c)) {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                contadorVocales++;
+            } else {
+                contadorConsonantes++;
+            }
+        }
+    }
+ 
+    std::cout << "Cantidad de vocales: " << contadorVocales << std::endl;
+    std::cout << "Cantidad de consonantes: " << contadorConsonantes << std::endl;
+ 
+    return 0;
+}

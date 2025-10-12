@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#include <string>
+ 
+struct Actividad {
+    std::string hora;
+    std::string descripcion;
+};
+ 
+int main() {
+    std::vector<std::vector<Actividad>> horarioSemanal(7); // Un vector para cada día de la semana
+ 
+    horarioSemanal[0].push_back({"09:00 - 10:30", "Clase de Matemáticas"}); // Lunes
+    horarioSemanal[1].push_back({"11:00 - 12:30", "Clase de Historia"}); // Martes
+    // ... Agregar actividades para cada día de la semana
+ 
+    int diaElegido;
+    std::cout << "Ingrese el día de la semana (1: Lunes, 2: Martes, ..., 7: Domingo): ";
+    std::cin >> diaElegido;
+ 
+    if (diaElegido < 1 || diaElegido > 7) {
+        std::cout << "Día no válido. Ingrese un número entre 1 y 7." << std::endl;
+        return 1;
+    }
+ 
+    std::cout << "Horario para el día ";
+    switch (diaElegido) {
+        case 1: std::cout << "Lunes"; break;
+        case 2: std::cout << "Martes"; break;
+        case 3: std::cout << "Miércoles"; break;
+        case 4: std::cout << "Jueves"; break;
+        // ... Agregar casos para cada día de la semana
+        case 7: std::cout << "Domingo"; break;
+    }
+    std::cout << ":" << std::endl;
+ 
+    if (!horarioSemanal[diaElegido - 1].empty()) {
+        for (const Actividad& actividad : horarioSemanal[diaElegido - 1]) {
+            std::cout << actividad.hora << " - " << actividad.descripcion << std::endl;
+        }
+    } else {
+        std::cout << "No se encontraron actividades para el día seleccionado." << std::endl;
+    }
+ 
+    return 0;
+}
