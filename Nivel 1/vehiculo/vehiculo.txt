@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+ 
+using namespace std;
+ 
+class Vehiculo {
+protected:
+    string marca;
+ 
+public:
+    Vehiculo(string m) : marca(m) {}
+ 
+    void mostrarMarca() {
+        cout << "Marca: " << marca << endl;
+    }
+};
+ 
+class Coche : public Vehiculo {
+private:
+    int numPuertas;
+ 
+public:
+    Coche(string m, int puertas) : Vehiculo(m), numPuertas(puertas) {}
+ 
+    void mostrarInfo() {
+        mostrarMarca();
+        cout << "Número de puertas: " << numPuertas << endl;
+    }
+};
+ 
+int main() {
+    Coche miCoche("Mitsubishi", 4);
+    miCoche.mostrarInfo();
+ 
+    return 0;
+}
