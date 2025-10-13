@@ -1,0 +1,21 @@
+#include <iostream>
+#include <thread>
+#include <mutex>
+ 
+std::mutex mtx; // Mutex para sincronización
+ 
+void funcionHilo(int id) {
+    std::lock_guard<std::mutex> lock(mtx); // Bloquear el mutex
+ 
+    std::cout << "Hola desde el hilo " << id << std::endl;
+}
+ 
+int main() {
+    std::thread hilo1(funcionHilo, 1);
+    std::thread hilo2(funcionHilo, 2);
+ 
+    hilo1.join();
+    hilo2.join();
+ 
+    return 0;
+}

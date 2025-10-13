@@ -1,0 +1,50 @@
+#include <iostream>
+#include <thread>
+#include <vector>
+#include <mutex>
+#include <chrono>
+ 
+const int numCorredores = 5;
+int posiciones[numCorredores];
+std::mutex mtx;
+ 
+void correr(int id) {
+    for (int i = 0; i < 10; ++i) {
+        // Simulamos la carrera con un retraso aleatorio
+        std::this_thread::sleep_for(std::chrono::milliseconds(rand() % 100));
+ 
+        // Actualizamos la posición del corredor
+        std::lock_guard<std::mutex> lock(mtx);
+        posiciones[id] = i + 1;
+ 
+        // Imprimimos la posición actualizada
+        std::cout << "Corredor " << id + 1 << ": Posición " << posiciones[id] << std::endl;
+    }
+}
+ 
+int main() {
+    std::vector<std::thread> corredores;
+ 
+    // Inicializamos las posiciones de los corredores
+    for (int i = 0; i < numCorredores; ++i) {
+        posiciones[i] = 0;
+    }
+ 
+    // Creamos los hilos para los corredores
+    for (int i = 0; i < numCorredores; ++i) {
+        corredores.emplace_back(correr, i);
+    }
+ 
+    // Esperamos a que todos los corredores terminen
+    for (auto& corredor : corredores) {
+        corredor.join();
+    }
+ 
+    // Imprimimos el resultado final
+    std::cout << "\nResultado Final:\n";
+    for (int i = 0; i < numCorredores; ++i) {
+        std::cout << "Corredor " << i + 1 << ": Posición " << posiciones[i] << std::endl;
+    }
+ 
+    return 0;
+}

@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+ 
+using namespace std;
+ 
+int main() {
+    int a = 5, b = 10, c = 15;
+     
+    // Declaraciones poco descriptivas
+    vector<int> v;
+    int arr[10];
+     
+    // Bucle for ineficiente
+    for (int i = 0; i < 10; i++) {
+        v.push_back(i);
+    }
+     
+    // Bucle while ineficiente
+    int i = 0;
+    while (i < v.size()) {
+        cout << v[i] << " ";
+        i++;
+    }
+     
+    // Uso de operadores lógicos innecesarios
+    if (a != 5 && b == 10 && c >= 15) {
+        cout << "Condición verdadera" << endl;
+    }
+     
+    // Uso excesivo de variables temporales
+    int suma = a + b;
+    int producto = a * b;
+    int resultado = suma + producto;
+     
+    // Falta de comentarios y explicaciones
+    if (resultado > 100) {
+        cout << "Resultado grande" << endl;
+    }
+     
+    return 0;
+}

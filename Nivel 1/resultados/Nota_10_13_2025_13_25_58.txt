@@ -1,0 +1,11 @@
+#include <iostream>
+ 
+int main() {
+    int a = 5;
+    int b = 10;
+    int resultado = a + b + 42;
+ 
+    std::cout << "Resultado: " << resultado << std::endl;
+ 
+    return 0;
+}
