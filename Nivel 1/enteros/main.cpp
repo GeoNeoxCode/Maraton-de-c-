@@ -1,106 +1,60 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
-#define NUMELTS 20
  
-void radixsort(int x[], int n)
-{
-    int front[10], rear[10];
+int main() {
+    int a = 10, b = 4;
+    int suma = a + b;
+    int resta = a - b;
+    int multiplicacion = a * b;
+    int division = a / b;
+    int modulo = a % b;
  
-    struct {
-        int info;
-        int next;
-    } node[NUMELTS];
+    int c = 15;
+    c += 5;
+    c -= 3;
+    c *= 2;
+    c /= 4;
+    c %= 3;
  
-    int exp, first, i, j, k, p, q, y;
+    bool esMayor = a > b;
+    bool esMenor = a < b;
+    bool igual = a == b;
+    bool noIgual = a != b;
+    bool mayorIgual = a >= b;
+    bool menorIgual = a <= b;
  
-    /* Inicializar una lista vinculada */
-    for (i = 0; i < n - 1; i++)
-    {
-        node[i].info = x[i];
-        node[i].next = i + 1;
-    } /* fin del for */
+    bool condicion1 = true;
+    bool condicion2 = false;
+    bool resultadoAnd = condicion1 && condicion2;
+    bool resultadoOr = condicion1 || condicion2;
+    bool resultadoNot = !condicion1;
  
-    node[n - 1].info = x[n - 1];
-    node[n - 1].next = -1;
-    first = 0; /* first es la cabeza de la lista vinculada */
+    int contador = 0;
+    contador++;
+    contador--;
  
-    for (k = 1; k < 5; k++)
-    {
-        /* Suponer que tenemos números de cuatro dígitos */
-        for (i = 0; i < 10; i++)
-        {
-            /* Inicializar colas */
-            rear[i] = -1;
-            front[i] = -1;
-        } /* fin del for */
+    int x = 5;
+    int y = 3;
+    int resultadoExpresion = x * (y + 2) - (x + y) / 2;
  
-        /* Procesar cada elemento en la lista */
-        while (first != -1)
-        {
-            p = first;
-            first = node[first].next;
-            y = node[p].info;
-            /* Extraer el k-ésimo dígito */
-            exp = pow(10, k - 1); /* elevar 10 a la (k-1)-ésima potencia */
-            j = (y / exp) % 10;
-            /* Insertar y en queue[j] */
-            q = rear[j];
-            if (q == -1)
-                front[j] = p;
-            else
-                node[q].next = p;
-            rear[j] = p;
-        } /* fin del while */
+    cout << "Operadores aritméticos:" << endl;
+    cout << "Suma: " << suma << ", Resta: " << resta << ", Multiplicación: " << multiplicacion << endl;
+    cout << "División: " << division << ", Módulo: " << modulo << endl;
  
-        /* En este punto, cada registro está en su cola basándose en el dígito k
-           Ahora formar una lista única de todos los elementos de la cola.
-           Encontrar el primer elemento. */
-        for (j = 0; j < 10 && front[j] == -1; j++)
-            ;
-        first = front[j];
+    cout << "\nOperadores de asignación:" << endl;
+    cout << "c: " << c << endl;
  
-        /* Vincular las colas restantes */
-        while (j <= 9)
-        { /* Verificar si se ha terminado */
-            /* Encontrar el elemento siguiente */
-            for (i = j + 1; i < 10 && front[i] == -1; i++)
-                ;
-            if (i <= 9)
-            {
-                p = i;
-                node[rear[j]].next = front[i];
-            } /* fin del if */
-            j = i;
-        } /* fin del while */
-        node[rear[p]].next = -1;
-    } /* fin del for */
+    cout << "\nOperadores de comparación:" << endl;
+    cout << "esMayor: " << esMayor << ", esMenor: " << esMenor << ", igual: " << igual << endl;
  
-    /* Copiar de regreso al archivo original */
-    for (i = 0; i < n; i++)
-    {
-        x[i] = node[first].info;
-        first = node[first].next;
-    } /* fin del for */
-} /* fin de radixsort */
+    cout << "\nOperadores lógicos:" << endl;
+    cout << "resultadoAnd: " << resultadoAnd << ", resultadoOr: " << resultadoOr << ", resultadoNot: " << resultadoNot << endl;
  
-int main(void)
-{
-    int x[50] = {0}, i;
-    static int n;
+    cout << "\nOperadores de incremento y decremento:" << endl;
+    cout << "contador: " << contador << endl;
  
-    cout << "Cadena de números enteros:\n";
-    for (n = 0;; n++)
-    {
-        cin >> x[n];
-        if (x[n] == -1)
-            break;
-    }
- 
-    if (n)
-        radixsort(x, n);
-    for (i = 0; i < n; i++)
-        cout << x[i] << endl;
+    cout << "\nExpresión:" << endl;
+    cout << "Resultado de la expresión: " << resultadoExpresion << endl;
  
     return 0;
 }
